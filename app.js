@@ -4,6 +4,11 @@ var express = require('express');
 //Create an instance of express application
 var app = express();
 
+//setting up the view engine
+app.set('view engine', 'ejs');
+//Where express should look for views
+app.set('views', __dirname+'/views');
+
 //tells application that we want to use this file
 var db = require('./model/db.js');
 
@@ -11,11 +16,11 @@ var db = require('./model/db.js');
 studs = db.students;
 
 //Every time application receives a request to show
-//root of the application, send this small set of data
+//render a view called 'index' by plugging in items from the set
+
 app.get('/', function(req, res){
-    res.send('name:      stud_id:</br>'+studs[0]['name']+
-    ' &emsp; '+studs[0]['id']+'</br>'+studs[1]['name']+
-    ' &emsp; '+studs[1]['id']);
+     res.render('index', {title: 'List of Students',
+         students: studs});
 });
 
 

@@ -1,0 +1,13 @@
+<% include header %>
+
+<main role="main">
+  <div class="container">
+    <ul>
+
+    <% students.forEach( function( student ) {%>
+    <li><%= student.id %> - <%= student.name %> said <%= student.message %></li>
+    <%});%>
+
+    </ul>
+
+<% include footer %>
