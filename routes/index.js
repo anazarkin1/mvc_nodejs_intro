@@ -1,5 +1,5 @@
 //tells application that we want to use this file
-var db = require('../model/db.js');
+var db = require('../models/db.js');
 
 //shorthand so that we don't need to type it everytime
 studs = db.students;
