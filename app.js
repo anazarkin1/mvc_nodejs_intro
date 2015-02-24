@@ -9,19 +9,12 @@ app.set('view engine', 'ejs');
 //Where express should look for views
 app.set('views', __dirname+'/views');
 
-//tells application that we want to use this file
-var db = require('./model/db.js');
-
-//shorthand so that we don't need to type it everytime
-studs = db.students;
+var routes = require('./routes');
 
 //Every time application receives a request to show
 //render a view called 'index' by plugging in items from the set
 
-app.get('/', function(req, res){
-     res.render('index', {title: 'List of Students',
-         students: studs});
-});
+app.get('/', routes.index);
 
 
 //Bind application to port 3000
