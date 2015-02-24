@@ -1,0 +1,8 @@
+{
+    "name":"Intro_to_mvc",
+    "version":"0.0.1",
+    "dependencies":{
+        "express":"4.x",
+        "ejs":"1.x"
+    }
+}
